@@ -9,8 +9,8 @@ Tive que pesquisar bastante sobre as classes utilitárias do Tailwind CSS
 e o que elas significavam em CSS.
 
 Mas a maior dificuldade foi em fazer a pesquisa na API ViaCep pelo logradouro.
-Apesar de já ter feito uma aplicação utilizando o REACT js que fazia a consulta pelo CEP,
-Tive muita dificuldade em achar uma solução para consultar pelo Logradouro.
+No fim o que ficou funcional foi a consulta pelo CEP.
+A consulta pelo Logradouro não funcionou, apesar de eu pesquisar muito.
 
 ## 2 - Descreva a funcionalidade e o por quê da utilização das bibliotecas escolhidas por você para concluir o desafio.
 
