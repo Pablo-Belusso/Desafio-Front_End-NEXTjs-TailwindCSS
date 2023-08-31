@@ -1,34 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DESAFIO FRONT-END
 
-## Getting Started
+## Consiste numa aplicação feita em NextJS contendo:
 
-First, run the development server:
+# Uma página inicial que possui os links para as seguintes páginas:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+    • Uma página onde seja exibido o clima de uma cidade. A cidade deve ser a cidade em que o usuário está.
+    • Uma página de busca de CEP, onde o usuário deverá inserir o nome da rua e a página deverá listar os possíveis resultados para tal consulta.
+    • Uma página de contato com um formulário ativo. O submit do elemento form, caso você utilize,
+    deverá ser uma função com um console.log dos dados do formulário e returno nulo. Este formulário
+    também deverá conter um campo para envio de arquivos. Os arquivos só poderão ser do tipo PDF.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Critérios de avaliação:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+• Utilização de TypeScript e tipagens (2,0 pts)
+• Clean code e boas práticas (3,0 pts)
+• Requisitos funcionais atendidos (2,0 pts)
+• Utilização do TailwindCSS para estilização (0,5 pts)
+• Design moderno (página bonitinha) (1,0 pts)
+• Página responsiva (1,0 pts)
+• Organização de arquivos e diretórios (0,5 pts)
+• “Tchammmm!” (2,0 pts)
