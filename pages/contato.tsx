@@ -4,23 +4,47 @@ import Link from 'next/link';
 import { FiArrowLeft } from 'react-icons/fi';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 
 const ContatoPage: React.FC = () => {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [mensagem, setMensagem] = useState('');
   const [arquivo, setArquivo] = useState<File | null>(null);
+  
+  const [isSnackbarOpen, setIsSnackbarOpen] = useState(false);
+
+  const handleSnackbarClose = () => {
+    setIsSnackbarOpen(false);
+  };
+
+  const handleCloseSnackbar = () => {
+    setIsSnackbarOpen(false);
+  };
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    console.log('Dados do formulário:');
-    console.log('Nome:', nome);
-    console.log('Email:', email);
-    console.log('Mensagem:', mensagem);
-    console.log('Arquivo:', arquivo);
-
-    // Fazer no futuro algo com os dados, como enviar por email
+      // Simulação de obtenção dos dados do formulário
+      const formData = new FormData(e.target as HTMLFormElement);
+      
+      // Construir um objeto a partir dos dados do formulário
+      const formDataObject: any = {};
+      formData.forEach((value, key) => {
+        formDataObject[key] = value;
+      });
+      
+      // Exibir os dados no console
+      
+      console.log('Dados do formulário:');
+      console.log('Nome:', nome);
+      console.log('Email:', email);
+      console.log('Mensagem:', mensagem);
+      console.log('Arquivo:', arquivo);
+      
+    // Abre a Snackbar ao enviar com sucesso
+    setIsSnackbarOpen(true);
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -41,6 +65,9 @@ const ContatoPage: React.FC = () => {
       <main className="flex flex-col items-center justify-center flex-1 space-y-8 bg-gray-100 p-4 sm:p-8">
 
       <h1 className="text-3xl font-semibold mb-2">Entre em Contato</h1>
+
+      
+
         <form onSubmit={handleFormSubmit} className="bg-white p-6 rounded-lg shadow-md w-full sm:w-96">
           <input
             type="text"
@@ -79,6 +106,16 @@ const ContatoPage: React.FC = () => {
           </button>
         </form>
 
+
+        {/* Snackbar para exibir a mensagem */}
+        <Snackbar
+          open={isSnackbarOpen}
+          autoHideDuration={3000}
+          onClose={handleSnackbarClose}
+          message="Arquivo enviado com sucesso!"
+        />
+
+
             <div className="mt-4">
             <Link href="/">
                   <p className="bg-gray-300 text-gray-800 px-4 py-2 rounded-md w-full ml-4 flex items-center justify-center hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500">
@@ -88,6 +125,25 @@ const ContatoPage: React.FC = () => {
             </div>
       </main>
       <Footer />
+      
+
+      {/* Snackbar */}
+      <Snackbar
+        open={isSnackbarOpen}
+        autoHideDuration={4000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      >
+        <MuiAlert
+          elevation={6}
+          variant="filled"
+          onClose={handleCloseSnackbar}
+          severity="success"
+        >
+          Arquivo enviado com sucesso!
+        </MuiAlert>
+      </Snackbar>
+
     </div>
   );
 };

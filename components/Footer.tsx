@@ -1,12 +1,14 @@
 // components/Footer.tsx
+
 import React from 'react';
 
 const Footer: React.FC = () => {
-  const footerStyle = {
-    backgroundColor: '#1a202c',
-    color: 'white',
-    textAlign: 'center',
-    padding: '1rem 0',
+
+  const footerStyle: React.CSSProperties = {
+  backgroundColor: '#333',
+  color: '#fff',
+  textAlign: 'center', 
+  padding: '1rem',
   };
 
   const linkStyle = {
@@ -33,3 +35,5 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+
+
