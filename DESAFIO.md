@@ -123,3 +123,4 @@ R: Um desenvolvedor Senior.
 
 R: Na página de contato eu adicionei um Snackbar ao navegador para confirmar o envio
 dos dados do formulário para o console.
+No geral, o Snackbar é uma ferramenta valiosa para melhorar a experiência do usuário, oferecendo feedback imediato e contextual de maneira não intrusiva. Ele ajuda a manter os usuários informados, engajados e confiantes ao interagir com seu aplicativo.
