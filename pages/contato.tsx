@@ -20,7 +20,7 @@ const ContatoPage: React.FC = () => {
     console.log('Mensagem:', mensagem);
     console.log('Arquivo:', arquivo);
 
-    // Faça algo com os dados, como enviar por email
+    // Fazer no futuro algo com os dados, como enviar por email
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {

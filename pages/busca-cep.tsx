@@ -1,85 +1,4 @@
 import React, { useState } from 'react';
-
-const BuscaCepPage: React.FC = () => {
-  const [logradouro, setLogradouro] = useState('');
-  const [localidade, setLocalidade] = useState('');
-  const [uf, setUf] = useState('');
-  const [cepData, setCepData] = useState<any>(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-
-  const handleSearch = async () => {
-    setLoading(true);
-    setError('');
-
-    try {
-      const response = await fetch(`https://viacep.com.br/ws/${uf}/${localidade}/${logradouro}/json/`);
-      const data = await response.json();
-
-      if (response.ok) {
-        setCepData(data);
-      } else {
-        setError('CEP não encontrado.');
-      }
-    } catch (error) {
-      setError('Ocorreu um erro ao buscar o CEP.');
-    }
-
-    setLoading(false);
-  };
-
-  return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-      <h1 className="text-3xl font-semibold mb-4">Busca de CEP</h1>
-      <div className="bg-white p-8 rounded-lg shadow-md w-full sm:w-96">
-        <input
-          type="text"
-          placeholder="Logradouro"
-          value={logradouro}
-          onChange={(e) => setLogradouro(e.target.value)}
-          className="border border-gray-300 px-3 py-2 rounded-md w-full mb-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-        <input
-          type="text"
-          placeholder="Cidade"
-          value={localidade}
-          onChange={(e) => setLocalidade(e.target.value)}
-          className="border border-gray-300 px-3 py-2 rounded-md w-full mb-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-        <input
-          type="text"
-          placeholder="UF"
-          value={uf}
-          onChange={(e) => setUf(e.target.value)}
-          className="border border-gray-300 px-3 py-2 rounded-md w-full mb-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-        <button
-          onClick={handleSearch}
-          className="bg-blue-500 text-white px-4 py-2 rounded-md w-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          disabled={loading}
-        >
-          {loading ? 'Buscando...' : 'Buscar CEP'}
-        </button>
-        {error && <p className="text-red-500 mt-2">{error}</p>}
-        {cepData && (
-          <div className="mt-4">
-            <p><strong>CEP:</strong> {cepData.cep}</p>
-            <p><strong>Logradouro:</strong> {cepData.logradouro}</p>
-            <p><strong>Bairro:</strong> {cepData.bairro}</p>
-            <p><strong>Cidade:</strong> {cepData.localidade}</p>
-            <p><strong>UF:</strong> {cepData.uf}</p>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
-
-export default BuscaCepPage;
-
-
-/*
-import React, { useState } from 'react';
 import Link from 'next/link';
 
 import { FiArrowLeft } from 'react-icons/fi';
@@ -95,12 +14,6 @@ const BuscaCepPage: React.FC = () => {
   const [logradouro, setLogradouro] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   
-  const [logradouro, setLogradouro] = useState('');
-  const [localidade, setLocalidade] = useState('');
-  const [uf, setUf] = useState('');
-  const [cepData, setCepData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
 
   const handleSearch = async () => {
     if (cep) {
@@ -158,7 +71,7 @@ const BuscaCepPage: React.FC = () => {
         
         <input
           type="text"
-          placeholder="Logradouro"
+          placeholder="Rua ou Avenida"
           value={logradouro}
           onChange={(e) => setLogradouro(e.target.value)}
           className="border p-2"
@@ -176,19 +89,16 @@ const BuscaCepPage: React.FC = () => {
         <p>Carregando...</p>
       ) : (
         <>
-          {cepResult ? (
+          {cepResult && (
             <div>
               <p>CEP: {cepResult.cep}</p>
               <p>Logradouro: {cepResult.logradouro}</p>
               <p>Bairro: {cepResult.bairro}</p>
               <p>Cidade/UF: {cepResult.localidade}/{cepResult.uf}</p>
             </div>
-          ) : (
-            <p>Nenhum resultado encontrado.</p>
           )}
 
-
-          {cepList.length > 0 ? (
+          {cepList.length > 0 && (
             <div>
               <p>Selecione um CEP:</p>
               <ul>
@@ -204,10 +114,7 @@ const BuscaCepPage: React.FC = () => {
                 ))}
               </ul>
             </div>
-          ) : (
-            <p>Nenhum resultado encontrado.</p>
           )}
-
         </>
       )}
 
@@ -228,4 +135,4 @@ const BuscaCepPage: React.FC = () => {
 
 export default BuscaCepPage;
 
-*/
+
