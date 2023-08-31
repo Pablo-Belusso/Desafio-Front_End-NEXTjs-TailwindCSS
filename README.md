@@ -1,14 +1,19 @@
-# DESAFIO FRONT-END
+### DESAFIO FRONT-END
 
 ## Consiste numa aplicação feita em NextJS contendo:
 
 # Uma página inicial que possui os links para as seguintes páginas:
 
-    • Uma página onde seja exibido o clima de uma cidade. A cidade deve ser a cidade em que o usuário está.
-    • Uma página de busca de CEP, onde o usuário deverá inserir o nome da rua e a página deverá listar os possíveis resultados para tal consulta.
-    • Uma página de contato com um formulário ativo. O submit do elemento form, caso você utilize,
-    deverá ser uma função com um console.log dos dados do formulário e returno nulo. Este formulário
-    também deverá conter um campo para envio de arquivos. Os arquivos só poderão ser do tipo PDF.
+    • Uma página onde seja exibido o clima de uma cidade.
+    A cidade deve ser a cidade em que o usuário está.
+
+    • Uma página de busca de CEP, onde o usuário deverá inserir o nome da rua
+    e a página deverá listar os possíveis resultados para tal consulta.
+
+    • Uma página de contato com um formulário ativo. O submit do elemento form,
+    caso você utilize,deverá ser uma função com um console.log dos dados do formulário
+    e returno nulo. Este formulário também deverá conter um campo para envio de arquivos.
+    Os arquivos só poderão ser do tipo PDF.
 
 # Critérios de avaliação:
 
