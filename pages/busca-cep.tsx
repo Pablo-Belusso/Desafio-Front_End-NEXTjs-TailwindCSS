@@ -5,6 +5,8 @@ import { FiArrowLeft } from 'react-icons/fi';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
+import '../styles/Home.module.css';
+
 
 const BuscaCepPage: React.FC = () => {
   
@@ -49,9 +51,6 @@ const BuscaCepPage: React.FC = () => {
       setLoading(false);
     }
   
-
-    
-
 };
 
   return (
@@ -60,7 +59,9 @@ const BuscaCepPage: React.FC = () => {
 
       <main className="flex flex-col items-center justify-center flex-1 space-y-12 bg-gray-100">
       <h1 className="text-2xl font-bold mb-4">Buscar CEP</h1>
-      <div className="flex space-x-2 mb-4">
+      
+      <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-x-2 sm:space-y-0 mb-4">
+
         <input
           type="text"
           placeholder="CEP"
@@ -134,5 +135,3 @@ const BuscaCepPage: React.FC = () => {
 };
 
 export default BuscaCepPage;
-
-

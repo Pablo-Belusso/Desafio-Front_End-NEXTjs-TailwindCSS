@@ -92,11 +92,11 @@ const ContatoPage: React.FC = () => {
             className="border border-gray-300 px-3 py-2 rounded-md w-full mb-3 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
-          <input
+          <input 
             type="file"
             accept=".pdf"
             onChange={handleFileChange}
-            className="mb-3 focus:outline-none"
+            className="mb-3 focus:outline-none text-sm"            
           />
           <button
             type="submit"
